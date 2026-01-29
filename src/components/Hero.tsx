@@ -81,20 +81,20 @@ export default function Hero() {
 
               {/* Solar panel grid - 4x4 */}
               <div className="relative grid grid-cols-4 gap-2 p-4 transform rotate-12 hover:rotate-6 transition-transform duration-700">
-                {Array.from({ length: 16 }).map((_, index) => (
+                {Array.from({ length: 16 }).map((_, panelIndex) => (
                   <div
-                    key={index}
-                    className="shimmer aspect-square rounded-sm bg-gradient-to-br from-[var(--bg-tertiary)] via-[var(--bg-secondary)] to-[var(--bg-tertiary)] border border-[var(--accent-primary)]/20 shadow-lg"
-                    style={{
-                      animationDelay: `${(index % 4) * 0.2 + Math.floor(index / 4) * 0.3}s`,
-                    }}
+                    key={panelIndex}
+                    className="aspect-square rounded-sm bg-gradient-to-br from-[var(--bg-tertiary)] via-[var(--bg-secondary)] to-[var(--bg-tertiary)] border border-[var(--accent-primary)]/20 shadow-lg"
                   >
-                    {/* Panel grid lines */}
+                    {/* Panel grid lines with shimmer on each cell */}
                     <div className="w-full h-full grid grid-cols-2 grid-rows-3 gap-px p-1">
                       {Array.from({ length: 6 }).map((_, cellIndex) => (
                         <div
                           key={cellIndex}
-                          className="bg-[var(--bg-primary)]/50 rounded-sm"
+                          className="solar-cell relative bg-[var(--bg-primary)]/50 rounded-sm overflow-hidden"
+                          style={{
+                            animationDelay: `${(panelIndex * 0.15) + (cellIndex * 0.1)}s`,
+                          }}
                         />
                       ))}
                     </div>
