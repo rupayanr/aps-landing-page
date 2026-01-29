@@ -62,9 +62,6 @@ describe('CelestialToggle', () => {
 
     const button = screen.getByRole('button')
 
-    // Verify AUTO label is not shown initially
-    expect(screen.queryByText(/auto/i)).not.toBeInTheDocument()
-
     // Double click
     await act(async () => {
       fireEvent.click(button)
@@ -76,22 +73,7 @@ describe('CelestialToggle', () => {
       vi.advanceTimersByTime(300)
     })
 
-    // Auto mode indicator should appear
-    expect(screen.getByText(/auto/i)).toBeInTheDocument()
-  })
-
-  it('shows AUTO label when in auto mode', () => {
-    render(<CelestialToggle />)
-
-    expect(screen.getByText(/auto/i)).toBeInTheDocument()
-  })
-
-  it('does not show AUTO label when not in auto mode', () => {
-    localStorage.setItem('aps-auto-theme', 'false')
-    localStorage.setItem('aps-theme', 'dark')
-
-    render(<CelestialToggle />)
-
-    expect(screen.queryByText(/auto/i)).not.toBeInTheDocument()
+    // Auto mode should be enabled (check localStorage)
+    expect(localStorage.getItem('aps-auto-theme')).toBe('true')
   })
 })

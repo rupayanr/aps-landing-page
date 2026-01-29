@@ -2,7 +2,7 @@ import { useRef, useCallback } from 'react'
 import { useTheme } from '../context/ThemeContext'
 
 export default function CelestialToggle() {
-  const { theme, toggleTheme, isAutoMode, setAutoMode } = useTheme()
+  const { theme, toggleTheme, setAutoMode } = useTheme()
 
   const clickTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const clickCountRef = useRef(0)
@@ -89,13 +89,6 @@ export default function CelestialToggle() {
           </svg>
         </div>
       </button>
-
-      {/* Auto mode indicator */}
-      {isAutoMode && (
-        <span className="absolute -bottom-5 text-[10px] font-semibold tracking-wider text-[var(--accent-primary)] uppercase">
-          Auto
-        </span>
-      )}
     </div>
   )
 }
