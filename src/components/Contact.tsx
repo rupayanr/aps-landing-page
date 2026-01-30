@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL, CONTACT_EMAIL_MAILTO, DETAILED_QUOTE_MAILTO } from '../constants'
+
 export default function Contact() {
   const contactInfo = [
     {
@@ -27,8 +29,8 @@ export default function Contact() {
         </svg>
       ),
       label: 'Email',
-      value: 'contact@associatedpower.com',
-      href: 'mailto:contact@associatedpower.com',
+      value: CONTACT_EMAIL,
+      href: CONTACT_EMAIL_MAILTO,
     },
     {
       icon: (
@@ -124,7 +126,7 @@ export default function Contact() {
               </p>
 
               <a
-                href="mailto:contact@associatedpower.com?subject=Quote Request&body=Hello,%0D%0A%0D%0AI am interested in your services. Please provide a quote for:%0D%0A%0D%0A- Service type:%0D%0A- Project location:%0D%0A- Estimated capacity/size:%0D%0A- Timeline:%0D%0A%0D%0AThank you."
+                href={DETAILED_QUOTE_MAILTO}
                 className="btn-primary inline-block bg-gradient-to-r from-solar-500 to-solar-600 text-white px-10 py-4 text-lg font-semibold hover:from-solar-600 hover:to-solar-700 transition-all shadow-lg shadow-solar-500/25"
               >
                 Get a Quote

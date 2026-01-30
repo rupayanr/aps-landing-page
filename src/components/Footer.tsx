@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL, CONTACT_EMAIL_MAILTO, QUOTE_REQUEST_MAILTO } from '../constants'
+
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
@@ -36,7 +38,7 @@ export default function Footer() {
     },
     {
       label: 'Email',
-      href: 'mailto:contact@associatedpower.com',
+      href: CONTACT_EMAIL_MAILTO,
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
@@ -141,16 +143,16 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-[var(--text-secondary)]">
               <li>
                 <a
-                  href="mailto:contact@associatedpower.com"
+                  href={CONTACT_EMAIL_MAILTO}
                   className="hover:text-[var(--accent-primary)] transition-colors"
                 >
-                  contact@associatedpower.com
+                  {CONTACT_EMAIL}
                 </a>
               </li>
               <li>India</li>
             </ul>
             <a
-              href="mailto:contact@associatedpower.com?subject=Quote Request"
+              href={QUOTE_REQUEST_MAILTO}
               className="btn-primary inline-block mt-6 bg-gradient-to-r from-solar-500 to-solar-600 text-white px-5 py-2.5 text-sm font-semibold hover:from-solar-600 hover:to-solar-700 transition-all"
             >
               Request Quote

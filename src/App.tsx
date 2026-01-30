@@ -1,4 +1,5 @@
 import { useTheme } from './context/ThemeContext'
+import ErrorBoundary from './components/ErrorBoundary'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
@@ -13,22 +14,24 @@ function App() {
   const { theme } = useTheme()
 
   return (
-    <div
-      data-theme={theme}
-      className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] font-body transition-colors duration-400"
-    >
-      <Navbar />
-      <main>
-        <Hero />
-        <Stats />
-        <About />
-        <Services />
-        <Projects />
-        <Clients />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <ErrorBoundary>
+      <div
+        data-theme={theme}
+        className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] font-body transition-colors duration-400"
+      >
+        <Navbar />
+        <main>
+          <Hero />
+          <Stats />
+          <About />
+          <Services />
+          <Projects />
+          <Clients />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ErrorBoundary>
   )
 }
 

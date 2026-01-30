@@ -1,3 +1,5 @@
+import { QUOTE_REQUEST_MAILTO_WITH_BODY } from '../constants'
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen pt-16 overflow-hidden grid-bg">
@@ -46,7 +48,7 @@ export default function Hero() {
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="mailto:contact@associatedpower.com?subject=Quote Request&body=Hello,%0D%0A%0D%0AI am interested in your services..."
+                href={QUOTE_REQUEST_MAILTO_WITH_BODY}
                 className="btn-primary bg-gradient-to-r from-solar-500 to-solar-600 text-white px-8 py-4 text-lg font-semibold hover:from-solar-600 hover:to-solar-700 transition-all shadow-lg shadow-solar-500/25"
               >
                 Get a Quote
